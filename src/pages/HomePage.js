@@ -8,7 +8,12 @@ import useData from "../store/hooks/useData";
 const StyledContainer = styled.div`
   .robots--container {
     display: flex;
-    width: 100%;
+
+    width: 150px;
+    height: 150px;
+  }
+  .container {
+    height: 130px;
   }
 `;
 

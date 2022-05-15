@@ -24,6 +24,8 @@ const Robots = ({ state }) => {
               speed={robot.speed}
               resistance={robot.resistance}
               created={robot.date}
+              robotId={robot._id}
+              _id={robot._id}
             ></Robot>
           </div>
         </StyledRobot>

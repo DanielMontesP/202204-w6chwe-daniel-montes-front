@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import AddButton from "../DeleteButton/AddButton";
 
 const StyledHeader = styled.div`
   text-align: center;
@@ -11,6 +12,7 @@ const Header = () => {
   return (
     <StyledHeader>
       <h1>Robots</h1>
+      <AddButton />
     </StyledHeader>
   );
 };

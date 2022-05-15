@@ -14,6 +14,7 @@ const StyledDelete = styled.div`
     font-size: 35px;
     background: rgba(226, 182, 22, 1);
     border-radius: 60%;
+    margin-bottom: -13px;
   }
 `;
 
