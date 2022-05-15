@@ -1,5 +1,4 @@
 import Header from "../components/Header/Header";
-// import Footer from "../components/Footer/Footer";
 import styled from "styled-components";
 import Robots from "../components/Robots/Robots";
 import { useContext, useEffect } from "react";
@@ -9,7 +8,6 @@ import useData from "../store/hooks/useData";
 const StyledContainer = styled.div`
   .robots--container {
     display: flex;
-    /* background: white; */
     width: 100%;
   }
 `;
@@ -28,7 +26,6 @@ const HomePage = () => {
       <div className="robots--container">
         <Robots pageKey={"home"} state={state} className="w-100" />
       </div>
-      {/* <Footer /> */}
     </StyledContainer>
   );
 };
