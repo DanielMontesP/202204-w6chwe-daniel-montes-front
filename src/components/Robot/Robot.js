@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import DeleteButton from "../DeleteButton/DeleteButton";
 
 const StyledRobot = styled.div`
   .robot__name {
@@ -24,6 +25,7 @@ const Robot = ({ name, robotURL, robotId, speed, resistance, created }) => {
           <br />
           Created: {created}
         </div>
+        <DeleteButton />
       </StyledRobot>
     </>
   );

@@ -29,7 +29,7 @@ const useData = () => {
     return favsData;
   }, [dispatch]);
 
-  const addToApiFav = async (robotId) => {
+  const addToApi = async (robotId) => {
     const robotsToFilter = state.find((robot) => {
       return robot.id === robotId.children[1];
     });
@@ -48,7 +48,7 @@ const useData = () => {
     return response.json();
   };
 
-  const deleteToApiFav = async (robotId) => {
+  const deleteToApiById = async (robotId) => {
     const robotsToFilter = state.find((robot) => {
       return robot.id === robotId.children[1];
     });
@@ -71,8 +71,8 @@ const useData = () => {
   return {
     loadNewRobots,
     loadFavRobots,
-    addToApiFav,
-    deleteToApiFav,
+    addToApi,
+    deleteToApiById,
   };
 };
 
