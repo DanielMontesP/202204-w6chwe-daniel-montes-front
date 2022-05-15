@@ -1,9 +1,9 @@
 import { useReducer } from "react";
 
-import robotListReducer from "../reducer/showListReducer";
-import RobotsContext from "./ShowsContext";
+import robotListReducer from "../reducer/RobotsReducer";
+import RobotsContext from "./RobotsContext";
 
-const ShowsProvider = ({ children }) => {
+const RobotsProvider = ({ children }) => {
   const initialLoad = [];
 
   const [state, dispatch] = useReducer(robotListReducer, initialLoad);
@@ -15,4 +15,4 @@ const ShowsProvider = ({ children }) => {
   );
 };
 
-export default ShowsProvider;
+export default RobotsProvider;

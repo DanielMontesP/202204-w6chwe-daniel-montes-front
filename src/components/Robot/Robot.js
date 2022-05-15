@@ -1,18 +1,32 @@
-import DeleteButton from "../DeleteButton/DeleteButton";
+// import DeleteButton from "../DeleteButton/DeleteButton";
 import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 
-const Robot = ({ name, robotURL, robotId }) => {
+const StyledRobot = styled.div`
+  .robot__name {
+    color: white;
+  }
+`;
+
+const Robot = ({ name, robotURL, robotId, speed, resistance, created }) => {
   const robotIdToProcess = "/robotdetail?id=" + robotId;
 
   return (
     <>
-      <div className="container">
-        <NavLink to={robotIdToProcess}>
-          <img width={210} height={295} src={robotURL} alt={name} />
-        </NavLink>
-        <p className="robot__name">{name}</p>
-        <DeleteButton>id={robotId}</DeleteButton>
-      </div>
+      <StyledRobot>
+        <div className="container">
+          <NavLink to={robotIdToProcess}>
+            <img width={105} height={146} src={robotURL} alt={name} />
+          </NavLink>
+          <h3 className="robot__name">{name}</h3>
+          Speed: {speed}
+          <br />
+          Resistance: {resistance}
+          <br />
+          Created: {created}
+          {/* <DeleteButton>id={robotId}</DeleteButton> */}
+        </div>
+      </StyledRobot>
     </>
   );
 };

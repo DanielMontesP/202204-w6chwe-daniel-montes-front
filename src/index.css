@@ -5,6 +5,9 @@ body {
     sans-serif;
   text-align: right;
   background: black;
+  /* background-image: url("../src/Images/robotLadeao.png");
+  background-repeat: no-repeat;
+  background-position-y: ; */
 }
 
 img {
