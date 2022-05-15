@@ -50,19 +50,23 @@ const useData = () => {
 
   const deleteToApiById = async (robotId) => {
     const robotsToFilter = state.find((robot) => {
-      return robot.id === robotId.children[1];
+      return robot._id === robotId.children[1];
     });
     const robotsFiltered = { ...robotsToFilter };
 
     const idToJson = JSON.stringify({ ...robotsFiltered });
 
-    const response = await fetch(privateApiUrl + "/" + robotId.children[1], {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: idToJson,
-    });
+    const response = await fetch(
+      "https://two02204-w6chwe-daniel-montes-back.onrender.com/delete-robot/" +
+        robotId.children[1],
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: idToJson,
+      }
+    );
 
     loadFavRobots();
     return response.json();
