@@ -1,4 +1,3 @@
-// import DeleteButton from "../DeleteButton/DeleteButton";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
@@ -24,7 +23,6 @@ const Robot = ({ name, robotURL, robotId, speed, resistance, created }) => {
           Resistance: {resistance}
           <br />
           Created: {created}
-          {/* <DeleteButton>id={robotId}</DeleteButton> */}
         </div>
       </StyledRobot>
     </>
