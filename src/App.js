@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       {/* <ShowsProvider> */}
-      <img src="../src/img/robotLadeao.png" alt="Imagen de robot fisgoneando" />
+      <img src="robotLadeao.png" alt="Imagen de robot fisgoneando" />
       <Routes>
         <Route path="/" element={<Navigate to="/homepage" />} />
         {/* <Route path="/homepage" element={<HomePage />} />
