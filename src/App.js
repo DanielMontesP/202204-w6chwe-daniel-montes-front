@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { Navigate, Route, Routes } from "react-router-dom";
+// import FavsPage from "./pages/FavsPage";
+// import HomePage from "./pages/HomePage";
+// import ShowDetailPage from "./pages/ShowDetailPage";
+// import ShowsProvider from "./store/context/ShowsProvider";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* <ShowsProvider> */}
+      <img src="../src/img/robotLadeao.png" alt="Imagen de robot fisgoneando" />
+      <Routes>
+        <Route path="/" element={<Navigate to="/homepage" />} />
+        {/* <Route path="/homepage" element={<HomePage />} />
+          <Route path="/favspage" element={<FavsPage />} />
+          <Route path="/showdetailpage" element={<ShowDetailPage />} /> */}
+      </Routes>
+      {/* </ShowsProvider> */}
+    </>
   );
 }
 
