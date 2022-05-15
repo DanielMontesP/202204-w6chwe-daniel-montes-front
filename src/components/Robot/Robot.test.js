@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { createMemoryHistory } from "history";
 import { Router } from "react-router-dom";
-import RobotsProvider from "../../store/context/Robotsrovider";
+import RobotsProvider from "../../store/context/RobotsProvider";
 import Robot from "./Robot";
 
 describe("Given a component TvShowMobileDetail", () => {
