@@ -6,19 +6,28 @@ import PropTypes from "prop-types";
 const StyledRobot = styled.div`
   text-align: center;
   margin: 10px;
-  background: grey;
+  /* background: grey; */
   border-radius: 45px;
   border: 2px solid white;
+  width: 170px;
+  height: 320px;
+  display: inline-grid;
+  margin-bottom: 90px;
+  .robot--container {
+    height: 100px;
+  }
 `;
 
 const Robots = ({ robots }) => {
   return (
     <>
       {robots.map(robot => (
-        <StyledRobot key={shortid.generate()} className="img--robot">
+        <StyledRobot key={shortid.generate()} className="robot--container">
           {/* <ul key={shortid.generate()}> */}
           {/* <Robot key={shortid.generate()} name={robot.name} robotURL=""></Robot> */}
-          <img width={105} height={146} src={robot.url} alt={robot.name} />
+          <div className="img--container">
+            <img width="100%" height="100%" src={robot.url} alt={robot.name} />
+          </div>
           <Robot
             key={shortid.generate()}
             name={robot.name}

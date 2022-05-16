@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Header from "../components/Header/Header";
 import Robots from "../components/Robots/Robots";
 import { loadRobotsThunk } from "../redux/thunks/robotsThunk";
 
@@ -11,7 +12,12 @@ const RobotsPage = () => {
     dispatch(loadRobotsThunk());
   }, [dispatch]);
 
-  return <Robots robots={robots} />;
+  return (
+    <>
+      <Header />
+      <Robots robots={robots} />
+    </>
+  );
 };
 
 export default RobotsPage;
