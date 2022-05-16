@@ -1,7 +1,8 @@
 import { faXmarkCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
-import useData from "../../store/hooks/useData";
+import { useDispatch } from "react-redux";
+import { deleteRobotThunk } from "../../redux/thunks/robotsThunk";
 
 const StyledDelete = styled.div`
   color: rgba(198, 0, 0, 0.6);
@@ -19,15 +20,16 @@ const StyledDelete = styled.div`
 `;
 
 const DeleteButton = (robotId) => {
-  const { deleteToApiById } = useData();
+  const dispatch = useDispatch();
+
+  const deleteRobot = () => {
+    dispatch(deleteRobotThunk(robotId.id));
+  };
 
   return (
     <StyledDelete>
       <FontAwesomeIcon
-        onClick={(event) => {
-          event.preventDefault();
-          deleteToApiById(robotId);
-        }}
+        onClick={deleteRobot}
         id={robotId}
         data-testid="FaxMarkXCircle"
         icon={faXmarkCircle}

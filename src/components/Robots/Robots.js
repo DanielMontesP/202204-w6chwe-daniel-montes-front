@@ -1,6 +1,7 @@
 import shortid from "shortid";
 import Robot from "../Robot/Robot";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const StyledRobot = styled.div`
   text-align: center;
@@ -10,28 +11,37 @@ const StyledRobot = styled.div`
   border: 2px solid white;
 `;
 
-const Robots = ({ state }) => {
+const Robots = ({ robots }) => {
+  debugger;
   return (
     <>
-      {state.map((robot) => (
+      {robots.map(robot => (
         <StyledRobot key={shortid.generate()} className="img--robot">
-          <div key={shortid.generate()}>
-            {/* <Robot key={shortid.generate()} name={robot.name} robotURL=""></Robot> */}
-            <Robot
-              key={shortid.generate()}
-              name={robot.name}
-              robotURL={robot.url}
-              speed={robot.speed}
-              resistance={robot.resistance}
-              created={robot.date}
-              robotId={robot._id}
-              _id={robot._id}
-            ></Robot>
-          </div>
+          {/* <ul key={shortid.generate()}> */}
+          {/* <Robot key={shortid.generate()} name={robot.name} robotURL=""></Robot> */}
+          <img width={105} height={146} src={robot.url} alt={robot.name} />
+          <Robot
+            key={shortid.generate()}
+            name={robot.name}
+            robotURL={robot.url}
+            speed={robot.speed}
+            resistance={robot.resistance}
+            created={robot.date}
+            robotId={robot._id}
+            _id={robot._id}
+          ></Robot>
+          {/* </ul> */}
         </StyledRobot>
       ))}
     </>
   );
 };
-
+Robot.propTypes = {
+  robot: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    resistance: PropTypes.number.isRequired,
+    speed: PropTypes.number.isRequired
+  })
+};
 export default Robots;
