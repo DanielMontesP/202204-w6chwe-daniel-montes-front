@@ -12,7 +12,6 @@ const StyledRobot = styled.div`
 `;
 
 const Robots = ({ robots }) => {
-  debugger;
   return (
     <>
       {robots.map(robot => (
