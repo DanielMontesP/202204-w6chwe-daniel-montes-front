@@ -10,7 +10,7 @@ const RobotsPage = () => {
   useEffect(() => {
     dispatch(loadRobotsThunk());
   }, [dispatch]);
-  debugger;
+
   return <Robots robots={robots} />;
 };
 
