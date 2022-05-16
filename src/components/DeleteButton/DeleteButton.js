@@ -26,7 +26,6 @@ const DeleteButton = (robotId) => {
   const dispatch = useDispatch();
 
   const deleteRobot = () => {
-    debugger;
     dispatch(deleteRobotThunk(robotId.children[1]));
   };
 
