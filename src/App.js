@@ -1,18 +1,13 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-
-import HomePage from "./pages/HomePage";
-
-import RobotsProvider from "./store/context/RobotsProvider";
+import RobotsPage from "./pages/RobotsPage";
 
 function App() {
   return (
     <>
-      <RobotsProvider>
-        <Routes>
-          <Route path="/" element={<Navigate to="/homepage" />} />
-          <Route path="/homepage" element={<HomePage />} />
-        </Routes>
-      </RobotsProvider>
+      <Routes>
+        <Route path="/" element={<Navigate to="/robots" />} />
+        <Route path="/robots" element={<RobotsPage />} />
+      </Routes>
     </>
   );
 }

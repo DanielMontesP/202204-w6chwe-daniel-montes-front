@@ -1,6 +1,5 @@
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
-import useData from "../../store/hooks/useData";
 
 const StyledAdd = styled.div`
   color: white;
@@ -20,7 +19,7 @@ const StyledAdd = styled.div`
 `;
 
 const AddButton = (robotId) => {
-  const { addToApi } = useData();
+  // const { addToApi } = useData();
 
   return (
     <StyledAdd>
@@ -36,7 +35,7 @@ const AddButton = (robotId) => {
       <button
         onClick={(event) => {
           event.preventDefault();
-          addToApi(robotId);
+          // addToApi(robotId);
         }}
         id={robotId}
         className="addIcon"

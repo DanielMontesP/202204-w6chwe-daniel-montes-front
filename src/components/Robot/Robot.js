@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import DeleteButton from "../DeleteButton/DeleteButton";
 
-const StyledRobot = styled.div`
+const StyledRobot = styled.ul`
   color: white;
   text-align: left;
   .robot__name {
@@ -16,19 +16,11 @@ const Robot = ({ name, robotURL, robotId, speed, resistance, created }) => {
   return (
     <>
       <StyledRobot>
-        <div className="container">
-          <NavLink to={robotIdToProcess}>
-            <img width={105} height={146} src={robotURL} alt={name} />
-          </NavLink>
-          <h3 className="robot__name">{name}</h3>
-          Speed:
-          {speed}
-          <br />
-          Resistance: {resistance}
-          <br />
-          Created: <br /> {created}
-        </div>
-
+        <NavLink to={robotIdToProcess}></NavLink>
+        <li>{name}</li>
+        <li>Speed: {speed}</li>
+        <li>Resistance: {resistance}</li>
+        <li>Created: {created}</li>
         <DeleteButton>id={robotId}</DeleteButton>
       </StyledRobot>
     </>
