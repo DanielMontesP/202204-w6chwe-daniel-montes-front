@@ -16,6 +16,9 @@ const StyledDelete = styled.div`
     background: rgba(226, 182, 22, 1);
     border-radius: 60%;
     margin-bottom: -13px;
+    position: relative;
+    top: -300px;
+    left: 95px;
   }
 `;
 

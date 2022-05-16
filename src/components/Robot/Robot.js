@@ -5,9 +5,17 @@ import DeleteButton from "../DeleteButton/DeleteButton";
 const StyledRobot = styled.ul`
   color: white;
   text-align: left;
+  margin-bottom: 50px;
+  font-size: 14px;
+  ul,
+  li {
+    list-style-type: none;
+  }
   .robot__name {
     color: white;
-    text-align: center;
+    font-size: 20px;
+    background: none;
+    margin-bottom: 10px;
   }
 `;
 
@@ -17,7 +25,7 @@ const Robot = ({ name, robotURL, robotId, speed, resistance, created }) => {
     <>
       <StyledRobot>
         <NavLink to={robotIdToProcess}></NavLink>
-        <li>{name}</li>
+        <li className="robot__name">{name}</li>
         <li>Speed: {speed}</li>
         <li>Resistance: {resistance}</li>
         <li>Created: {created}</li>

@@ -11,8 +11,8 @@ export const loadRobotsThunk = () => async (dispatch) => {
     const { data: robots } = await axios.get(
       process.env.REACT_APP_PUBLIC_API_URL
     );
-
-    dispatch(loadRobotsActionCreator(robots.robots));
+    // debugger;
+    dispatch(loadRobotsActionCreator(robots));
   } catch (error) {
     return error;
   }
