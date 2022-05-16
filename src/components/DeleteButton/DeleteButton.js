@@ -13,11 +13,11 @@ const StyledDelete = styled.div`
   }
   .deleteIcon {
     font-size: 35px;
-    background: rgba(226, 182, 22, 1);
+    background: rgb(23 16 14);
     border-radius: 60%;
     margin-bottom: -13px;
     position: relative;
-    top: -300px;
+    top: -288px;
     left: 95px;
   }
 `;
@@ -26,7 +26,8 @@ const DeleteButton = (robotId) => {
   const dispatch = useDispatch();
 
   const deleteRobot = () => {
-    dispatch(deleteRobotThunk(robotId.id));
+    debugger;
+    dispatch(deleteRobotThunk(robotId.children[1]));
   };
 
   return (

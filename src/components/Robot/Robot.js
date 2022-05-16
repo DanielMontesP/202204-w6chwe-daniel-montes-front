@@ -10,10 +10,12 @@ const StyledRobot = styled.ul`
   ul,
   li {
     list-style-type: none;
+
+    width: 100%;
   }
   .robot__name {
     color: white;
-    font-size: 20px;
+    font-size: 22px;
     background: none;
     margin-bottom: 10px;
   }

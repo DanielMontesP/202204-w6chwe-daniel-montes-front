@@ -3,7 +3,6 @@ import {
   createRobotActionCreator,
   deleteRobotActionCreator,
   loadRobotsActionCreator,
-  updateRobotActionCreator,
 } from "../reducers/features/robotsSlice";
 
 export const loadRobotsThunk = () => async (dispatch) => {
@@ -11,7 +10,7 @@ export const loadRobotsThunk = () => async (dispatch) => {
     const { data: robots } = await axios.get(
       process.env.REACT_APP_PUBLIC_API_URL
     );
-    // debugger;
+
     dispatch(loadRobotsActionCreator(robots));
   } catch (error) {
     return error;
@@ -47,20 +46,4 @@ export const createRobotThunk = (robot) => async (dispatch) => {
   const newRobot = await response.json();
 
   dispatch(createRobotActionCreator(newRobot));
-};
-
-export const updateRobotThunk = (robot) => async (dispatch) => {
-  const response = await fetch(
-    `${process.env.REACT_APP_PUBLIC_API_URL}/update`,
-    {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(robot),
-    }
-  );
-
-  const updatedRobot = await response.json();
-  dispatch(updateRobotActionCreator(updatedRobot));
 };

@@ -13,20 +13,36 @@ const StyledRobot = styled.div`
   height: 320px;
   display: inline-grid;
   margin-bottom: 90px;
+
   .robot--container {
     height: 100px;
+  }
+  h1 {
+    color: white;
+  }
+  .img--container {
+    background: #335689;
+    border-radius: 43px;
+  }
+  img {
+    margin-top: 17px;
   }
 `;
 
 const Robots = ({ robots }) => {
   return (
     <>
-      {robots.map(robot => (
+      {robots.map((robot) => (
         <StyledRobot key={shortid.generate()} className="robot--container">
           {/* <ul key={shortid.generate()}> */}
           {/* <Robot key={shortid.generate()} name={robot.name} robotURL=""></Robot> */}
           <div className="img--container">
-            <img width="100%" height="100%" src={robot.url} alt={robot.name} />
+            <img
+              width="170px"
+              height="130px"
+              src={robot.url}
+              alt={robot.name}
+            />
           </div>
           <Robot
             key={shortid.generate()}
@@ -49,7 +65,7 @@ Robot.propTypes = {
     name: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
     resistance: PropTypes.number.isRequired,
-    speed: PropTypes.number.isRequired
-  })
+    speed: PropTypes.number.isRequired,
+  }),
 };
 export default Robots;

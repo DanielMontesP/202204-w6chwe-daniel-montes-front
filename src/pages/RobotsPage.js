@@ -6,12 +6,11 @@ import { loadRobotsThunk } from "../redux/thunks/robotsThunk";
 
 const RobotsPage = () => {
   const dispatch = useDispatch();
-  const robots = useSelector(state => state.robots);
+  const robots = useSelector((state) => state.robots);
 
   useEffect(() => {
     dispatch(loadRobotsThunk());
   }, [dispatch]);
-
   return (
     <>
       <Header />
