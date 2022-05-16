@@ -1,5 +1,7 @@
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { createRobotThunk } from "../../redux/thunks/robotsThunk";
 
 const StyledAdd = styled.div`
   color: white;
@@ -19,27 +21,14 @@ const StyledAdd = styled.div`
 `;
 
 const AddButton = (robotId) => {
-  // const { addToApi } = useData();
+  const dispatch = useDispatch();
 
+  const createRobot = () => {
+    dispatch(createRobotThunk(robotId.children[1]));
+  };
   return (
     <StyledAdd>
-      {/* <FontAwesomeIcon
-        onClick={(event) => {
-          event.preventDefault();
-          addToApi(robotId);
-        }}
-        id={robotId}
-        icon={solid("fa-circle-plus")}
-        className="addIcon"
-      /> */}
-      <button
-        onClick={(event) => {
-          event.preventDefault();
-          // addToApi(robotId);
-        }}
-        id={robotId}
-        className="addIcon"
-      >
+      <button onClick={createRobot} id={robotId} className="addIcon">
         +
       </button>
     </StyledAdd>

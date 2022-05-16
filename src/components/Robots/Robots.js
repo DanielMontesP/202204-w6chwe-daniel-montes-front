@@ -6,7 +6,6 @@ import PropTypes from "prop-types";
 const StyledRobot = styled.div`
   text-align: center;
   margin: 10px;
-  /* background: grey; */
   border-radius: 45px;
   border: 2px solid white;
   width: 170px;
@@ -34,8 +33,6 @@ const Robots = ({ robots }) => {
     <>
       {robots.map((robot) => (
         <StyledRobot key={shortid.generate()} className="robot--container">
-          {/* <ul key={shortid.generate()}> */}
-          {/* <Robot key={shortid.generate()} name={robot.name} robotURL=""></Robot> */}
           <div className="img--container">
             <img
               width="170px"
@@ -54,7 +51,6 @@ const Robots = ({ robots }) => {
             robotId={robot._id}
             _id={robot._id}
           ></Robot>
-          {/* </ul> */}
         </StyledRobot>
       ))}
     </>
